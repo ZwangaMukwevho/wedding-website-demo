@@ -71,6 +71,7 @@
 					<ul>
 						<li class="active"><a href="index.html">Home</a></li>
 						<li class="active"><a href="#fh5co-event">Events</a></li>
+						<li class="active"><a href="#fh5co-rsvp">RSVP</a></li>
 						<li class="active"><a href="#fh5co-gallery">Gallery</a></li>
 						<li class="active"><a href="#fh5co-services">Highlights</a></li>
 					</ul>
@@ -156,6 +157,33 @@
 		</div>
 	</div>
 
+
+	<!-- ============================================================
+	     RSVP Section
+	     ============================================================ -->
+	<div id="fh5co-rsvp" class="fh5co-section-gray">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+					<h2>RSVP</h2>
+					<p>Received an invitation? Enter your personal invite code below.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center animate-box">
+					<div class="rsvp-form-wrap">
+						<input type="text" id="rsvp-code-input" class="form-control"
+							placeholder="Enter your code (e.g. X7K2PQ)"
+							maxlength="6" autocomplete="off" spellcheck="false">
+						<button id="rsvp-lookup-btn" class="btn btn-primary">Find my invite</button>
+						<p id="rsvp-error" class="rsvp-error" style="display:none;">
+							Code not found. Please check your invitation and try again.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div id="fh5co-gallery" class="fh5co-section-gray">
 		<div class="container">
@@ -250,5 +278,50 @@
 	<!-- Main -->
 	<script src="js/main.js"></script>
 	<center>View Source Code on <a href="https://github.com/zwangamukwevho/wedding-website-demo">GitHub <img src="images/github-logo.png"> </a> </center>
+
+	<!-- ============================================================
+	     RSVP Popup (hidden — opened by Magnific Popup via rsvp.js)
+	     ============================================================ -->
+	<div id="rsvp-popup" class="mfp-hide rsvp-popup-content">
+
+		<!-- Step 1: Greeting + Attending / Declined choice -->
+		<div id="rsvp-step-choice">
+			<h2 id="rsvp-guest-name"></h2>
+			<p>Will you be joining <strong>Sedza &amp; Lila</strong> on their special day?</p>
+			<div class="rsvp-choices">
+				<button class="btn btn-primary rsvp-choice" data-choice="Attending">
+					&#10003; Yes, I'll be there!
+				</button>
+				<button class="btn btn-primary btn-outline rsvp-choice" data-choice="Declined">
+					&#10007; Sorry, I can't make it
+				</button>
+			</div>
+		</div>
+
+		<!-- Step 2: Optional message -->
+		<div id="rsvp-step-message" style="display:none;">
+			<h2 id="rsvp-guest-name-2"></h2>
+			<p id="rsvp-choice-label"></p>
+			<textarea id="rsvp-message" class="form-control"
+				placeholder="Leave a message for the couple (optional)" rows="3"></textarea>
+			<button id="rsvp-confirm-btn" class="btn btn-primary">Confirm RSVP</button>
+			<p id="rsvp-submit-error" class="rsvp-error" style="display:none;">
+				Something went wrong. Please try again.
+			</p>
+		</div>
+
+		<!-- Step 3: Thank you -->
+		<div id="rsvp-step-thankyou" style="display:none;">
+			<div class="rsvp-thankyou">
+				<span class="rsvp-heart">&#9829;</span>
+				<h2 id="rsvp-thankyou-heading"></h2>
+				<p id="rsvp-thankyou-msg"></p>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- RSVP Script -->
+	<script src="js/rsvp.js"></script>
 	</body>
 </html>

@@ -1805,3 +1805,122 @@ form label {
 
 /*# sourceMappingURL=style.css.map */
 
+/* =====================================================================
+   RSVP Section
+   ===================================================================== */
+#fh5co-rsvp {
+  padding: 7em 0;
+}
+
+.rsvp-form-wrap {
+  margin-top: 1.5em;
+}
+
+.rsvp-form-wrap #rsvp-code-input {
+  max-width: 280px;
+  margin: 0 auto 14px;
+  text-align: center;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 600;
+  display: block;
+}
+
+.rsvp-form-wrap #rsvp-lookup-btn {
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.rsvp-error {
+  margin-top: 12px;
+  color: #e74c3c;
+  font-size: 14px;
+}
+
+/* =====================================================================
+   RSVP Popup
+   ===================================================================== */
+.rsvp-popup-content {
+  background: #fff;
+  padding: 50px 40px;
+  max-width: 480px;
+  margin: 20px auto;
+  border-radius: 6px;
+  text-align: center;
+  position: relative;
+}
+
+.rsvp-popup-content h2 {
+  font-family: 'Sacramento', Arial, serif;
+  color: #F14E95;
+  font-size: 48px;
+  margin-bottom: 8px;
+  line-height: 1.2;
+  font-weight: normal;
+}
+
+.rsvp-popup-content > div > p {
+  color: #828282;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.rsvp-choices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 14px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 24px 0 8px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.rsvp-popup-content textarea.form-control {
+  width: 100%;
+  margin: 14px 0 18px;
+  resize: vertical;
+  min-height: 90px;
+}
+
+.rsvp-popup-content #rsvp-confirm-btn {
+  margin-bottom: 6px;
+}
+
+.rsvp-thankyou .rsvp-heart {
+  display: block;
+  font-size: 52px;
+  color: #F14E95;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.rsvp-thankyou h2 {
+  margin-top: 6px;
+}
+
+.rsvp-thankyou p {
+  color: #828282;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+@media screen and (max-width: 480px) {
+  .rsvp-popup-content {
+    padding: 36px 24px;
+  }
+  .rsvp-popup-content h2 {
+    font-size: 38px;
+  }
+  .rsvp-choices {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    align-items: center;
+  }
+}
+
