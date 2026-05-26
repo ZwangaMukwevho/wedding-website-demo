@@ -1138,8 +1138,8 @@ form label {
 }
 .fh5co-heading h2 {
   font-size: 60px;
-  margin-bottom: 10px;
-  line-height: 1.5;
+  margin-bottom: 30px;
+  line-height: 1.8;
   font-weight: bold;
   color: #646464;
   font-family: "Amsterdam", Arial, serif;
@@ -1810,6 +1810,14 @@ form label {
    ===================================================================== */
 #fh5co-rsvp {
   padding: 7em 0;
+  clear: both;
+}
+
+/* Ensure animate-box elements are visible on mobile where Waypoint may not fire */
+@media (max-width: 767px) {
+  .js .animate-box {
+    opacity: 1;
+  }
 }
 
 .rsvp-form-wrap {
