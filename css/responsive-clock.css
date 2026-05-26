@@ -180,6 +180,8 @@
 }
 
 .flip-clock-wrapper {
+  display: inline-block !important;
+  width: auto !important;
   margin: 4em auto !important;
   text-align: center;
 }
