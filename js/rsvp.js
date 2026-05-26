@@ -5,7 +5,7 @@
 // paste the deployment URL below.
 // =============================================================================
 
-const APPS_SCRIPT_URL = '';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwwRhI-k6iuIZw69cZBAYR670IfLEPvfxB2NuBquh9bF7g96JkWf9Ej5cLtmJ9r_H_3YA/exec';
 
 $(document).ready(function () {
 
