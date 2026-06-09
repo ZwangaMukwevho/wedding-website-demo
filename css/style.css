@@ -1932,3 +1932,223 @@ form label {
   }
 }
 
+/* =====================================================================
+   Welcome Popup — blur the page behind the modal
+   ===================================================================== */
+#page.blurred-bg {
+  -webkit-filter: blur(6px);
+          filter: blur(6px);
+  -webkit-transition: -webkit-filter 0.3s ease;
+          transition: filter 0.3s ease;
+}
+
+.welcome-dismiss-wrap {
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+
+.welcome-dismiss {
+  font-size: 14px;
+  color: #828282;
+  text-decoration: underline;
+}
+
+.welcome-dismiss:hover,
+.welcome-dismiss:focus {
+  color: #f366a3;
+}
+
+/* =====================================================================
+   Gifts Section
+   ===================================================================== */
+#fh5co-gifts .gift-wrap {
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  width: 100%;
+  float: left;
+  margin-top: 10px;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  #fh5co-gifts .gift-wrap {
+    margin-bottom: 10px;
+  }
+}
+
+#fh5co-gifts .gift-wrap i {
+  color: #F14E95;
+  font-size: 40px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+#fh5co-gifts .gift-wrap h3 {
+  font-size: 25px;
+  color: #000000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  display: block;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: Sofia Sans Condensed;
+}
+
+#fh5co-gifts .gift-wrap p,
+#fh5co-gifts .gift-wrap .gift-line {
+  color: rgba(0, 0, 0, 0.8);
+  font-family: Sofia Sans Condensed;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+#fh5co-gifts .gift-acc {
+  display: inline-block;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #F14E95;
+}
+
+#fh5co-gifts .gift-registry {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#fh5co-gifts .gift-registry li {
+  margin-bottom: 8px;
+}
+
+#fh5co-gifts .gift-registry a {
+  font-family: Sofia Sans Condensed;
+  font-size: 20px;
+  color: #646464;
+  text-decoration: underline;
+}
+
+#fh5co-gifts .gift-registry a:hover,
+#fh5co-gifts .gift-registry a:focus {
+  color: #f366a3;
+}
+
+/* =====================================================================
+   Our Story — vertical timeline
+   ===================================================================== */
+.story-timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Clear floated milestones so the container keeps its height (center line) */
+.story-timeline:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Center vertical line */
+.story-timeline:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  margin-left: -1px;
+  background: #e0e0e0;
+}
+
+.story-item {
+  position: relative;
+  width: 50%;
+  padding: 0 40px 50px 0;
+  float: left;
+  clear: both;
+}
+
+/* Even items sit on the right side */
+.story-item:nth-child(even) {
+  float: right;
+  padding: 0 0 50px 40px;
+}
+
+/* The dot on the center line */
+.story-dot {
+  position: absolute;
+  top: 6px;
+  right: -9px;
+  width: 16px;
+  height: 16px;
+  background: #F14E95;
+  border: 3px solid #fff;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  -webkit-box-shadow: 0 0 0 1px #e0e0e0;
+          box-shadow: 0 0 0 1px #e0e0e0;
+  z-index: 1;
+}
+
+.story-item:nth-child(even) .story-dot {
+  right: auto;
+  left: -9px;
+}
+
+.story-content {
+  background: #fff;
+  padding: 24px 28px;
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.story-content .story-date {
+  display: block;
+  color: #F14E95;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.story-content h3 {
+  font-family: Sofia Sans Condensed;
+  font-size: 26px;
+  color: #000000;
+  margin: 0 0 10px;
+}
+
+.story-content p {
+  color: #828282;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* Mobile: single column, line on the far left */
+@media screen and (max-width: 767px) {
+  .story-timeline:before {
+    left: 8px;
+    margin-left: 0;
+  }
+  .story-item,
+  .story-item:nth-child(even) {
+    width: 100%;
+    float: none;
+    padding: 0 0 30px 36px;
+  }
+  .story-dot,
+  .story-item:nth-child(even) .story-dot {
+    left: 0;
+    right: auto;
+  }
+}
+

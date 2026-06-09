@@ -73,7 +73,8 @@
 						<li class="active"><a href="#fh5co-event">Events</a></li>
 						<li class="active"><a href="#fh5co-rsvp">RSVP</a></li>
 						<li class="active"><a href="#fh5co-gallery">Gallery</a></li>
-						<li class="active"><a href="#fh5co-services">Highlights</a></li>
+						<li class="active"><a href="#fh5co-gifts">Gifts</a></li>
+						<li class="active"><a href="#fh5co-story">Our Story</a></li>
 					</ul>
 				</div>
 			</div>
@@ -224,26 +225,92 @@
 
 
 
-	<div id="fh5co-services" class="fh5co-section-gray">
+	<!-- ============================================================
+	     Gifts Section
+	     ============================================================ -->
+	<div id="fh5co-gifts" class="fh5co-section-gray">
 		<div class="container">
-			
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Highlights</h2>
-
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+					<h2>Gifts</h2>
+					<p>Your presence is the greatest gift of all &mdash; but if you'd like to bless us as we begin our new life together, here are a few ways.</p>
 				</div>
 			</div>
-
-
-
-				<div class="container animate-box">
-					<div class="fh5co-video fh5co-bg" style="background-image: url(images/img_bg_3.jpg); ">
-						<a href="#" class="popup-vimeo"><i class="icon-video2"></i></a>
-						<div class="overlay"></div>
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="col-md-6 col-sm-6 text-center">
+						<div class="gift-wrap animate-box">
+							<i class="icon-wallet"></i>
+							<h3>Contribute to our home</h3>
+							<!-- PLACEHOLDER: replace with the couple's real bank details -->
+							<p class="gift-line">Account name: <b>[Account Name]</b></p>
+							<p class="gift-line">Bank: <b>[Bank Name]</b></p>
+							<p class="gift-line">Account number: <span class="gift-acc">0000 0000 0000</span></p>
+							<p class="gift-line">Branch code: <b>000000</b></p>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6 text-center">
+						<div class="gift-wrap animate-box">
+							<i class="icon-bag"></i>
+							<h3>Our gift registry</h3>
+							<p>Prefer to pick something out? You can find us at:</p>
+							<!-- PLACEHOLDER: replace href values with your real registry links -->
+							<ul class="gift-registry">
+								<li><a href="#" target="_blank" rel="noopener">Woolworths Registry</a></li>
+								<li><a href="#" target="_blank" rel="noopener">Mr Price Home Registry</a></li>
+								<li><a href="#" target="_blank" rel="noopener">Takealot Wish List</a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
-			
+		</div>
+	</div>
+
+
+	<!-- ============================================================
+	     Our Story Section
+	     ============================================================ -->
+	<div id="fh5co-story" class="fh5co-section-gray">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+					<h2>Our Story</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<ul class="story-timeline">
+						<li class="story-item animate-box">
+							<div class="story-dot"></div>
+							<div class="story-content">
+								<span class="story-date">2019</span>
+								<h3>How we met</h3>
+								<!-- PLACEHOLDER: replace with the real story -->
+								<p>[Placeholder paragraph 1 &mdash; tell the story of how you first crossed paths. Keep it warm and personal, a few sentences about the moment you met.]</p>
+							</div>
+						</li>
+						<li class="story-item animate-box">
+							<div class="story-dot"></div>
+							<div class="story-content">
+								<span class="story-date">2022</span>
+								<h3>Falling in love</h3>
+								<!-- PLACEHOLDER: replace with the real story -->
+								<p>[Placeholder paragraph 2 &mdash; share a little about your journey together: the adventures, the everyday moments, and what made you realise this was forever.]</p>
+							</div>
+						</li>
+						<li class="story-item animate-box">
+							<div class="story-dot"></div>
+							<div class="story-content">
+								<span class="story-date">2025</span>
+								<h3>The proposal</h3>
+								<!-- PLACEHOLDER: replace with the real story -->
+								<p>[Placeholder paragraph 3 &mdash; describe the proposal and how it felt to say yes. End on the excitement of the wedding to come.]</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="gototop js-top">
@@ -321,7 +388,22 @@
 
 	</div>
 
+	<!-- ============================================================
+	     Welcome Popup (shown once per session — opened by welcome-popup.js)
+	     ============================================================ -->
+	<div id="welcome-popup" class="mfp-hide rsvp-popup-content">
+		<h2>Will we see you there?</h2>
+		<p>Sedza &amp; Lila would love to know if you can join them on their special day.</p>
+		<div class="rsvp-choices">
+			<button class="btn btn-primary welcome-choice" data-answer="yes">&#10003; Yes, I'll be there</button>
+			<button class="btn btn-primary btn-outline welcome-choice" data-answer="no">&#10007; I can't make it</button>
+		</div>
+		<p class="welcome-dismiss-wrap"><a href="#" class="welcome-dismiss">I've already answered</a></p>
+	</div>
+
 	<!-- RSVP Script -->
 	<script src="js/rsvp.js"></script>
+	<!-- Welcome Popup Script -->
+	<script src="js/welcome-popup.js"></script>
 	</body>
 </html>
