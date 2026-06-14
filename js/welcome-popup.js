@@ -11,13 +11,17 @@ $(document).ready(function () {
 
   var SESSION_KEY = 'welcomeSeen';
 
-  // Skip if already shown this session.
-  if (sessionStorage.getItem(SESSION_KEY)) return;
+  // TESTING TOGGLE: set to true to show the popup on every reload.
+  // Set back to false for production (shows once per browser session).
+  var SHOW_EVERY_RELOAD = true;
+
+  // Skip if already shown this session (unless testing on every reload).
+  if (!SHOW_EVERY_RELOAD && sessionStorage.getItem(SESSION_KEY)) return;
 
   // Small delay so the popup doesn't fight the page loader (.fh5co-loader).
   setTimeout(function () {
     // Guard again in case something opened it in the meantime.
-    if (sessionStorage.getItem(SESSION_KEY)) return;
+    if (!SHOW_EVERY_RELOAD && sessionStorage.getItem(SESSION_KEY)) return;
 
     $.magnificPopup.open({
       items          : { src: '#welcome-popup' },
