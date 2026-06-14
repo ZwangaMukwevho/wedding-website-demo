@@ -13,7 +13,7 @@ $(document).ready(function () {
 
   // TESTING TOGGLE: set to true to show the popup on every reload.
   // Set back to false for production (shows once per browser session).
-  var SHOW_EVERY_RELOAD = true;
+  var SHOW_EVERY_RELOAD = false;
 
   // Skip if already shown this session (unless testing on every reload).
   if (!SHOW_EVERY_RELOAD && sessionStorage.getItem(SESSION_KEY)) return;
