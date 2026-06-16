@@ -2083,3 +2083,14 @@ form label {
   }
 }
 
+
+/* Smaller placeholder text for the RSVP code input */
+#rsvp-code-input::placeholder {
+  font-size: 10px;
+}
+#rsvp-code-input::-webkit-input-placeholder {
+  font-size: 10px;
+}
+#rsvp-code-input:-ms-input-placeholder {
+  font-size: 10px;
+}
