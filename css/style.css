@@ -1965,7 +1965,7 @@ form label {
   border: 2px solid rgba(0, 0, 0, 0.5);
   padding: 30px;
   width: 100%;
-  height: 340px;
+  height: 365px;
   float: left;
   margin-top: 10px;
   -webkit-border-radius: 4px;
@@ -1976,7 +1976,7 @@ form label {
 @media screen and (max-width: 768px) {
   #fh5co-gifts .gift-wrap {
     height: auto;
-    min-height: 340px;
+    min-height: 365px;
     margin-bottom: 10px;
   }
 }

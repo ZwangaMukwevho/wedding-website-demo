@@ -23,6 +23,7 @@ $(document).ready(function () {
     $('#rsvp-message').val('');
     $('#rsvp-submit-error').hide();
     $('#rsvp-confirm-btn').text('Confirm RSVP').prop('disabled', false);
+    $('#rsvp-gifts-btn').hide();
     showStep('#rsvp-step-choice');
   }
 
@@ -87,7 +88,7 @@ $(document).ready(function () {
     $('#rsvp-choice-label').text(
       isAttending
         ? "We're so glad! Leave a note for the couple if you'd like."
-        : "We'll miss you! Feel free to leave a message for Sedza & Lila."
+        : "We'll miss you! Feel free to leave a message for Liladzani & Sedza."
     );
 
     showStep('#rsvp-step-message');
@@ -116,13 +117,16 @@ $(document).ready(function () {
           $('#rsvp-thankyou-heading').text(
             isAttending
               ? 'See you there! 🎉'
-              : 'Thank you for letting us know 💕'
+              : "We're sorry you can't make it 💕"
           );
           $('#rsvp-thankyou-msg').text(
             isAttending
               ? "We can't wait to celebrate with you on the big day!"
-              : "We'll be thinking of you. Thank you for the well wishes!"
+              : 'But you can still share in our forever in the following ways:'
           );
+
+          // For declines, offer a gentle nudge towards the Gifts section.
+          $('#rsvp-gifts-btn').toggle(!isAttending);
 
           showStep('#rsvp-step-thankyou');
         } else {

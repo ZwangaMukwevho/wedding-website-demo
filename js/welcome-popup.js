@@ -53,12 +53,45 @@ $(document).ready(function () {
     );
   }
 
-  // Yes / No → close, then scroll to the RSVP section.
+  // ── Scroll to the Gifts section ──────────────────────────────────────────
+  function goToGifts() {
+    var $gifts = $('#fh5co-gifts');
+    if (!$gifts.length) return;
+    $('html, body').animate(
+      { scrollTop: $gifts.offset().top - 60 },
+      800,
+      'easeInOutExpo'
+    );
+  }
+
+  // Welcome popup choice:
+  //   "Yes" → scroll to the RSVP code box.
+  //   "No"  → show the decline popup (which leads to the Gifts section).
   $(document).on('click', '.welcome-choice', function (e) {
     e.preventDefault();
+    var answer = $(this).data('answer');
     $.magnificPopup.close();
-    // Wait for the close animation before scrolling.
-    setTimeout(goToRsvp, 200);
+
+    if (answer === 'no') {
+      // Wait for the close animation, then open the decline popup.
+      setTimeout(function () {
+        $.magnificPopup.open({
+          items          : { src: '#decline-popup' },
+          type           : 'inline',
+          closeBtnInside : true,
+          mainClass      : 'mfp-fade'
+        });
+      }, 250);
+    } else {
+      setTimeout(goToRsvp, 200);
+    }
+  });
+
+  // "See ways to share" (on either decline view) → close popup, scroll to Gifts.
+  $(document).on('click', '.js-to-gifts', function (e) {
+    e.preventDefault();
+    $.magnificPopup.close();
+    setTimeout(goToGifts, 250);
   });
 
   // "I've already answered" → just dismiss.

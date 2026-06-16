@@ -235,12 +235,12 @@
 					<div class="col-md-6 col-sm-6 text-center">
 						<div class="gift-wrap animate-box">
 							<i class="icon-bag"></i>
-							<h3>Our gift registry</h3>
-							<p>Prefer to pick something out? You can find us at:</p>
-							<!-- PLACEHOLDER: replace href values with your real registry links -->
+							<h3>Gift vouchers</h3>
+							<p>Prefer to pick something out? Vouchers from any of these stores are always welcome:</p>
+							<!-- PLACEHOLDER: replace href values with your real store links -->
 							<ul class="gift-registry">
 								<li><a href="https://bash.com/homewarestore" target="_blank" rel="noopener">@Home</a></li>
-								<li><a href="https://www.mrphome.com/" target="_blank" rel="noopener">Mr Price Home</a></li>
+								<li><a href="https://www.mrphome.com/en_za/gift-voucher-mrphome" target="_blank" rel="noopener">Mr Price Home</a></li>
 								<li><a href="https://www.game.co.za/" target="_blank" rel="noopener">Game</a></li>
 							</ul>
 						</div>
@@ -342,6 +342,8 @@
 				<span class="rsvp-heart">&#9829;</span>
 				<h2 id="rsvp-thankyou-heading"></h2>
 				<p id="rsvp-thankyou-msg"></p>
+				<!-- Shown only when the guest declines — leads to the Gifts section -->
+				<p><button id="rsvp-gifts-btn" class="btn btn-primary js-to-gifts" style="display:none;">See ways to share &#128157;</button></p>
 			</div>
 		</div>
 
@@ -358,6 +360,18 @@
 			<button class="btn btn-primary btn-outline welcome-choice" data-answer="no">&#10007; I can't make it</button>
 		</div>
 		<p class="welcome-dismiss-wrap"><a href="#" class="welcome-dismiss">I've already answered</a></p>
+	</div>
+
+	<!-- ============================================================
+	     Decline Popup (opened from the welcome popup's "I can't make it")
+	     ============================================================ -->
+	<div id="decline-popup" class="mfp-hide rsvp-popup-content">
+		<div class="rsvp-thankyou">
+			<span class="rsvp-heart">&#9829;</span>
+			<h2>We're sorry you can't make it</h2>
+			<p>But you can still share in our forever in the following ways:</p>
+			<p><button class="btn btn-primary js-to-gifts">See ways to share &#128157;</button></p>
+		</div>
 	</div>
 
 	<!-- RSVP Script -->
