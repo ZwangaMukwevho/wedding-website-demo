@@ -980,6 +980,15 @@ form label {
   background: rgba(0, 0, 0, 0.04);
 }
 
+.theme-heading {
+  margin-bottom: 80px;
+}
+@media screen and (max-width: 768px) {
+  .theme-heading {
+    margin-bottom: 20px;
+  }
+}
+
 .couple-wrap {
   width: 90%;
   margin: 0 auto;

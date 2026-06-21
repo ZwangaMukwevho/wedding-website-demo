@@ -1010,7 +1010,7 @@ form {
 #fh5co-couple,
 #fh5co-gallery,
 .fh5co-section {
-	padding: 7em 0;
+	padding: 2em 0;
 	clear: both;
 	@media screen and (max-width: $screen-sm) {
 		padding: 3em 0;
@@ -1019,6 +1019,13 @@ form {
 
 .fh5co-section-gray{
 	background: rgba($brand-black,.04);
+}
+
+.theme-heading {
+	margin-bottom: 80px;
+	@media screen and (max-width: $screen-sm) {
+		margin-bottom: 20px;
+	}
 }
 
 
