@@ -33,23 +33,16 @@ $(document).ready(function () {
     const code = $('#rsvp-code-input').val().trim().toUpperCase();
     if (!code) return;
 
-    $('#rsvp-error').hide();
+    $('#rsvp-error, #rsvp-closed').hide();
     $('#rsvp-lookup-btn').text('Checking…').prop('disabled', true);
 
     fetch(APPS_SCRIPT_URL + '?action=lookup&code=' + encodeURIComponent(code))
       .then(function (r) { return r.json(); })
       .then(function (data) {
         if (data.success) {
+          // RSVPs are closed — a valid code no longer opens the RSVP flow.
           currentCode = code;
-          resetPopup();
-          $('#rsvp-guest-name').text('Welcome, ' + data.name + '! 🎉');
-
-          $.magnificPopup.open({
-            items      : { src: '#rsvp-popup' },
-            type       : 'inline',
-            closeBtnInside : true,
-            mainClass  : 'mfp-fade'
-          });
+          $('#rsvp-closed').fadeIn();
         } else {
           $('#rsvp-error').fadeIn();
         }
