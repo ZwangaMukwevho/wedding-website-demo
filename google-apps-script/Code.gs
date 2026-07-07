@@ -12,7 +12,9 @@
 //   - Sheet tab named exactly: Guests
 //   - Row 1 is headers (skipped)
 //   - Column A: Guest Name
-//   - Column B: Unique Code  (6-char uppercase, e.g. X7K2PQ)
+//   - Column B: Unique Code  (legacy — no longer used for matching)
+//   - A column headed exactly "New Code" holds the active invite codes
+//     (6-char uppercase, e.g. X7K2PQ). Matching is done against this column.
 //   - Column C: RSVP Status  (written by this script: "Attending" or "Declined")
 //   - Column D: Message      (written by this script)
 //   - Column E: Timestamp    (written by this script, ISO 8601)
@@ -43,10 +45,19 @@ function doGet(e) {
 
   const rows = sheet.getDataRange().getValues();
 
+  // Only codes from the "New Code" column are accepted. Locate it by header
+  // name so it works regardless of which column it was added as.
+  const headers = rows[0].map(function (h) { return h.toString().trim().toLowerCase(); });
+  const codeCol = headers.indexOf('new code');
+
+  if (codeCol === -1) {
+    return json({ success: false, error: '"New Code" column not found' });
+  }
+
   // ── Lookup ────────────────────────────────────────────────────────────────
   if (action === 'lookup') {
     for (let i = 1; i < rows.length; i++) {
-      if (rows[i][1].toString().trim().toUpperCase() === code) {
+      if (rows[i][codeCol].toString().trim().toUpperCase() === code) {
         return json({
           success : true,
           name    : rows[i][0],
@@ -67,7 +78,7 @@ function doGet(e) {
     }
 
     for (let i = 1; i < rows.length; i++) {
-      if (rows[i][1].toString().trim().toUpperCase() === code) {
+      if (rows[i][codeCol].toString().trim().toUpperCase() === code) {
         sheet.getRange(i + 1, 3).setValue(rsvp);
         sheet.getRange(i + 1, 4).setValue(message);
         sheet.getRange(i + 1, 5).setValue(new Date().toISOString());
