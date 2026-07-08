@@ -40,8 +40,18 @@ $(document).ready(function () {
       .then(function (r) { return r.json(); })
       .then(function (data) {
         if (data.success) {
-          // RSVPs are closed — a valid code no longer opens the RSVP flow.
           currentCode = code;
+          resetPopup();
+          $('#rsvp-guest-name').text('Welcome, ' + data.name + '! 🎉');
+
+          $.magnificPopup.open({
+            items      : { src: '#rsvp-popup' },
+            type       : 'inline',
+            closeBtnInside : true,
+            mainClass  : 'mfp-fade'
+          });
+        } else if (data.closed) {
+          // A legacy code whose RSVP window has closed.
           $('#rsvp-closed').fadeIn();
         } else {
           $('#rsvp-error').fadeIn();

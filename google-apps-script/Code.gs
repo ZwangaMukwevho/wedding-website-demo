@@ -49,6 +49,7 @@ function doGet(e) {
   // name so it works regardless of which column it was added as.
   const headers = rows[0].map(function (h) { return h.toString().trim().toLowerCase(); });
   const codeCol = headers.indexOf('new code');
+  const oldCol  = headers.indexOf('unique code');   // legacy codes — now closed
 
   if (codeCol === -1) {
     return json({ success: false, error: '"New Code" column not found' });
@@ -63,6 +64,15 @@ function doGet(e) {
           name    : rows[i][0],
           rsvp    : rows[i][2] || ''   // existing RSVP status, if any
         });
+      }
+    }
+    // Not an active code. If it matches a legacy "Unique Code", the guest's
+    // RSVP window has closed — flag it so the site can say so.
+    if (oldCol !== -1) {
+      for (let i = 1; i < rows.length; i++) {
+        if (rows[i][oldCol].toString().trim().toUpperCase() === code) {
+          return json({ success: false, closed: true });
+        }
       }
     }
     return json({ success: false, error: 'Code not found' });
